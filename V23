@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEON PLAYER</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-icon">♫</span> NEON<span>PLAYER</span></div>
+      <p class="section-label">MENU</p>
+      <button class="nav active" data-view="all">◈ &nbsp; All Music</button>
+      <button class="nav" data-view="favorites">♡ &nbsp; Favorites</button>
+      <button class="nav" data-view="recent">◷ &nbsp; Recently Played</button>
+      <div class="sidebar-bottom">
+        <div class="online-dot"></div>
+        LOCAL PLAYER <span>●</span>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">YOUR PERSONAL SOUNDSPACE</p>
+          <h1>Feel the <span>Frequency.</span></h1>
+        </div>
+        <label class="upload-btn">
+          <span>＋</span> Add Music
+          <input id="fileInput" type="file" accept="audio/*" multiple hidden>
+        </label>
+      </header>
+
+      <section class="hero">
+        <div class="hero-content">
+          <span class="pill"><i></i> YOUR MUSIC ZONE</span>
+          <h2>Escape into<br>your own <span>world.</span></h2>
+          <p>Your sound. Your vibe. Your universe.</p>
+          <button id="heroPlay" class="primary-btn">▶ &nbsp; Play Music</button>
+        </div>
+        <div class="orb" aria-hidden="true">
+          <div class="orb-core">N</div>
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="orbit orbit-three"></div>
+        </div>
+      </section>
+
+      <section class="library">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">YOUR COLLECTION</p>
+            <h2 id="libraryTitle">Your Library <span id="trackCount">0</span></h2>
+          </div>
+          <input id="searchInput" class="search" type="search" placeholder="⌕  Search tracks...">
+        </div>
+
+        <div class="track-head">
+          <span>#</span><span>TRACK</span><span>DURATION</span><span>♡</span>
+        </div>
+        <div id="playlist" class="playlist">
+          <div class="empty-state">
+            <div class="empty-icon">♫</div>
+            <h3>Your sound awaits.</h3>
+            <p>Add your first music files to begin.</p>
+            <button class="outline-btn" id="emptyUpload">＋ Add your music</button>
+          </div>
+        </div>
+      </section>
+
+      <footer class="player">
+        <div class="now-playing">
+          <div id="miniArt" class="mini-art">♫</div>
+          <div class="now-info">
+            <strong id="trackTitle">No track selected</strong>
+            <span id="trackArtist">Add your favorite music</span>
+          </div>
+          <button id="favoriteBtn" class="icon-btn" aria-label="Favorite">♡</button>
+        </div>
+
+        <div class="player-center">
+          <div class="controls">
+            <button id="shuffleBtn" class="icon-btn" title="Shuffle">⤨</button>
+            <button id="prevBtn" class="icon-btn big-icon" title="Previous">|◀</button>
+            <button id="playBtn" class="play-btn" title="Play">▶</button>
+            <button id="nextBtn" class="icon-btn big-icon" title="Next">▶|</button>
+            <button id="repeatBtn" class="icon-btn" title="Repeat">↻</button>
+          </div>
+          <div class="timeline">
+            <span id="currentTime">0:00</span>
+            <input id="seekBar" type="range" min="0" max="1000" value="0" aria-label="Seek">
+            <span id="duration">0:00</span>
+          </div>
+        </div>
+
+        <div class="volume">
+          <span>♫</span>
+          <input id="volumeBar" type="range" min="0" max="1" step="0.01" value="0.8" aria-label="Volume">
+        </div>
+      </footer>
+    </main>
+  </div>
+  <audio id="audio"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
