@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#05080d">
+  <title>Neon Wave | Music Player</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+
+    <header class="topbar">
+      <a class="brand" href="#">
+        <span class="brand-icon">♫</span>
+        <span>NEON<span class="blue">WAVE</span></span>
+      </a>
+      <span class="status"><span></span> YOUR MUSIC SPACE</span>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar">
+        <p class="section-label">MENU</p>
+        <button class="nav-item active">⌂ &nbsp; Home</button>
+        <button class="nav-item" id="libraryBtn">♫ &nbsp; Your Library</button>
+        <button class="nav-item" id="favoritesBtn">♡ &nbsp; Favorites</button>
+
+        <div class="sidebar-bottom">
+          <div class="mini-equalizer">
+            <i></i><i></i><i></i><i></i><i></i>
+          </div>
+          <p>FEEL THE MUSIC</p>
+          <small>Your world. Your sound.</small>
+        </div>
+      </aside>
+
+      <section class="content">
+        <div class="welcome">
+          <div>
+            <p class="eyebrow">YOUR PERSONAL SOUNDTRACK</p>
+            <h1>Music for your <span>mood.</span></h1>
+            <p class="subtext">Every beat. Every moment. Just you.</p>
+          </div>
+          <label class="upload-btn">
+            + Add music
+            <input type="file" id="fileInput" accept="audio/*" multiple hidden>
+          </label>
+        </div>
+
+        <section class="player-card">
+          <div class="cover-wrap">
+            <div class="cover" id="cover">
+              <div class="cover-orbit orbit-one"></div>
+              <div class="cover-orbit orbit-two"></div>
+              <div class="cover-center">♫</div>
+              <div class="cover-caption">NEON<br>WAVE</div>
+            </div>
+            <span class="playing-tag" id="playingTag">NOW PLAYING</span>
+          </div>
+
+          <div class="player-info">
+            <p class="eyebrow">CURRENT TRACK</p>
+            <h2 id="songTitle">No song selected</h2>
+            <p class="artist" id="artistName">Add your music to begin</p>
+
+            <div class="progress-area">
+              <input type="range" id="progress" min="0" max="100" value="0" aria-label="Seek through song">
+              <div class="time-row">
+                <span id="currentTime">0:00</span>
+                <span id="duration">0:00</span>
+              </div>
+            </div>
+
+            <div class="controls">
+              <button class="icon-btn" id="shuffleBtn" title="Shuffle" aria-label="Shuffle">⤨</button>
+              <button class="icon-btn" id="prevBtn" title="Previous" aria-label="Previous song">|◀</button>
+              <button class="play-btn" id="playBtn" aria-label="Play">▶</button>
+              <button class="icon-btn" id="nextBtn" title="Next" aria-label="Next song">▶|</button>
+              <button class="icon-btn" id="repeatBtn" title="Repeat" aria-label="Repeat">↻</button>
+            </div>
+
+            <div class="volume-row">
+              <span>◖</span>
+              <input type="range" id="volume" min="0" max="1" step="0.01" value="0.7" aria-label="Volume">
+              <span id="volumeValue">70%</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="playlist-section" id="playlistSection">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">YOUR COLLECTION</p>
+              <h2>My Playlist <span id="songCount">0</span></h2>
+            </div>
+            <span class="playlist-hint">LOCAL MUSIC LIBRARY</span>
+          </div>
+
+          <div class="track-list" id="trackList">
+            <div class="empty-state">
+              <span>♫</span>
+              <h3>Your playlist is waiting</h3>
+              <p>Click "Add music" to select MP3, WAV, or other audio files.</p>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>NEON<span class="blue">WAVE</span></span>
+      <span>MADE FOR YOUR EARS. ✦</span>
+    </footer>
+
+    <audio id="audio"></audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
