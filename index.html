@@ -1,11 +1,121 @@
-<html>
-<head>MUSIC_PLAYER</head>
-<title>MUSIC_PLAYER</title>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101010">
+  <title>My Player | Personal Music</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
-<h1>best music player</h1>
-<h2>BEST PLAYER IN THE WORLD IN RIVALS AND BETTER THAN VEX_9</h2>
-</body>  
+  <div class="app">
+
+    <aside class="sidebar">
+      <a class="brand" href="#">
+        <span class="brand-icon">♫</span>
+        <span>MY<span class="orange">PLAYER</span></span>
+      </a>
+
+      <p class="section-label">MENU</p>
+      <button class="nav-item active" id="homeBtn">⌂ <span>Home</span></button>
+      <button class="nav-item" id="libraryBtn">▤ <span>My Library</span></button>
+
+      <div class="side-bottom">
+        <p class="section-label">YOUR MUSIC</p>
+        <p class="muted small">Your music, your rules.</p>
+        <button class="upload-btn" id="uploadBtn">＋ Add Music</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">YOUR PERSONAL SOUNDTRACK</p>
+          <h1>Good music. <span class="orange">Good mood.</span></h1>
+        </div>
+        <label class="search-box">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="Search songs...">
+        </label>
+      </header>
+
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="pill">YOUR MUSIC SPACE</span>
+          <h2>Feel every<br> <span class="orange">beat.</span></h2>
+          <p>Your favorite tracks, all in one place.</p>
+          <button id="heroPlayBtn" class="primary-btn">▶ Play Music</button>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-ring ring-one"></div>
+          <div class="art-ring ring-two"></div>
+          <div class="art-disc">♫</div>
+          <div class="equalizer">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+        </div>
+      </section>
+
+      <section class="library-section" id="library">
+        <div class="section-heading">
+          <div>
+            <h2>Your playlist</h2>
+            <p class="muted"><span id="songCount">0</span> tracks in your library</p>
+          </div>
+          <label class="upload-label" for="fileInput">＋ Add songs</label>
+          <input id="fileInput" type="file" accept="audio/*" multiple hidden>
+        </div>
+
+        <div class="track-header">
+          <span>#</span>
+          <span>TRACK</span>
+          <span class="duration-heading">TIME</span>
+        </div>
+
+        <div id="playlist" class="playlist">
+          <div class="empty-state">
+            <div class="empty-icon">♫</div>
+            <h3>Your library starts here</h3>
+            <p>Add audio files from your device to start listening.</p>
+            <button class="primary-btn" id="emptyUploadBtn">Choose music</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="player">
+    <div class="now-playing">
+      <div class="mini-art" id="miniArt">♫</div>
+      <div class="track-info">
+        <strong id="currentTitle">No song selected</strong>
+        <span id="currentArtist">Add music to begin</span>
+      </div>
+    </div>
+
+    <div class="player-center">
+      <div class="player-controls">
+        <button class="control-btn" id="shuffleBtn" title="Shuffle" aria-label="Shuffle">⤨</button>
+        <button class="control-btn" id="prevBtn" title="Previous" aria-label="Previous">|◀</button>
+        <button class="play-btn" id="playBtn" title="Play" aria-label="Play">▶</button>
+        <button class="control-btn" id="nextBtn" title="Next" aria-label="Next">▶|</button>
+        <button class="control-btn" id="repeatBtn" title="Repeat" aria-label="Repeat">↻</button>
+      </div>
+      <div class="progress-row">
+        <span id="currentTime">0:00</span>
+        <input id="seekBar" type="range" min="0" max="100" value="0" aria-label="Seek audio">
+        <span id="duration">0:00</span>
+      </div>
+    </div>
+
+    <div class="volume-control">
+      <span>♫</span>
+      <input id="volumeBar" type="range" min="0" max="1" step="0.01" value="0.8" aria-label="Volume">
+    </div>
+  </footer>
+
+  <audio id="audio"></audio>
+  <script src="script.js"></script>
+</body>
 </html>
-
-
-  
